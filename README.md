@@ -107,21 +107,6 @@ The analysis determined that:
 ✓ **Urea removal rate of 1400 mg/min** is achieved through the system  
 ✓ Membrane resistance is the dominant factor limiting mass transfer
 
-## Repository Contents
-
-```
-CE-318-Final-Project-Hemodyalasis/
-├── README.md                                    # This file
-├── CE_318_Project__Hemodialysis/
-│   ├── main.tex                                # Main LaTeX document
-│   ├── references.bib                          # Bibliography
-│   └── [Supporting figures and images]         # Project illustrations
-```
-
-## Technologies & Tools
-
-- **LaTeX** (91.8% of repository) - Document preparation and technical writing
-- **Python** (8.2% of repository) - Calculations and data analysis
 
 ## Methodology
 
