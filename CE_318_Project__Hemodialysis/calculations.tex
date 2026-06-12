@@ -1,0 +1,258 @@
+\documentclass[10.5pt]{article}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{lineno}
+\usepackage{enumitem}
+
+% bibliography/citations
+\usepackage[super, comma, sort&compress]{natbib}
+
+% hyperlinks should usually come after citation packages
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\captionsetup[figure]{name=Figure,labelsep=period}
+\captionsetup[table]{name=Table,labelsep=period}
+\captionsetup{justification=centering}
+
+\doublespacing
+\setlength{\parindent}{0pt}
+
+% Spacing Rules 
+
+% Compact equation spacing
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+
+% Compact subsubsection spacing
+\usepackage{titlesec}
+\titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
+
+
+
+
+\geometry{
+    left=2.54cm,
+    right=2.54cm,
+    top=2cm,
+    bottom=2.54cm
+}
+
+
+\begin{document}
+
+\section{Calculations}
+
+\subsection{Dialysate Outlet Concentration, $C_{d,o}$}
+
+Using the total urea mass balance,
+\[
+    Q_b(C_{b,i}-C_{b,o}) = Q_d(C_{d,o}-C_{d,i})
+\]
+
+Since fresh dialysate enters with negligible urea concentration, $C_{d,i}=0$. Solving for $C_{d,o}$:
+\[
+    C_{d,o} = \frac{Q_b}{Q_d}(C_{b,i}-C_{b,o})
+    = \frac{1000}{2400}(2000-600)
+\]
+
+\[
+    \boxed{C_{d,o}=583.3 \ \text{mg/L}}
+\]
+
+\subsection{Temperature-Corrected Urea Diffusivity, $D_{AB,T}$}
+
+The diffusivity is corrected using:
+\[
+    D_{AB,T}
+    = D_{AB,ref}
+    \left(\frac{T}{T_{ref}}\right)
+    \left(\frac{\mu_{ref}}{\mu_T}\right)
+\]
+
+The temperatures are converted to Kelvin:
+\[
+    T_{ref}=26.7+273.15=299.85 \ \text{K},
+    \qquad
+    T=37.4+273.15=310.55 \ \text{K}
+\]
+
+Substituting values:
+\[
+    D_{AB,T}
+    = (1.44 \times 10^{-9})
+    \left(\frac{310.55}{299.85}\right)
+    \left(\frac{878.263 \times 10^{-6}}{699.037 \times 10^{-6}}\right)
+\]
+
+\[
+    D_{AB,T}
+    = (1.44 \times 10^{-9})(1.0357)(1.2564)
+\]
+
+\[
+    \boxed{D_{AB,T}=1.87 \times 10^{-9} \ \text{m}^2/\text{s}}
+\]
+
+\subsection{Effective Diffusivity, $D_{Ae}$}
+
+The effective diffusivity through the membrane is:
+\[
+    D_{Ae} = \varepsilon D_{AB,T}
+    = (0.20)(1.87 \times 10^{-9})
+\]
+
+\[
+    \boxed{D_{Ae}=3.74 \times 10^{-10} \ \text{m}^2/\text{s}}
+\]
+
+\subsection{Overall Mass Transfer Coefficient, $K_o$}
+
+Assuming membrane resistance dominates:
+\[
+    K_o \approx \frac{D_{Ae}}{\delta_m}
+    = \frac{3.74 \times 10^{-10}}{25 \times 10^{-6}}
+\]
+
+\[
+    \boxed{K_o=1.50 \times 10^{-5} \ \text{m/s}}
+\]
+
+\subsection{Concentration Differences, $\Delta C_1$ and $\Delta C_2$}
+
+For counter-current flow:
+\[
+    \Delta C_1 = C_{b,i}-C_{d,o},
+    \qquad
+    \Delta C_2 = C_{b,o}-C_{d,i}
+\]
+
+Since $C_{d,i}\approx 0$:
+\[
+    \Delta C_1 = 2000-583.3 = 1416.7 \ \text{mg/L}
+\]
+
+\[
+    \Delta C_2 = 600-0 = 600 \ \text{mg/L}
+\]
+
+\[
+    \boxed{\Delta C_1=1416.7 \ \text{mg/L}},
+    \qquad
+    \boxed{\Delta C_2=600 \ \text{mg/L}}
+\]
+
+\subsection{Log-Mean Concentration Difference, $\Delta C_{lm}$}
+
+The log-mean concentration difference is:
+\[
+    \Delta C_{lm}
+    =
+    \frac{\Delta C_1-\Delta C_2}
+    {\ln\left(\frac{\Delta C_1}{\Delta C_2}\right)}
+\]
+
+Using $\Delta C_1=1416.7 \ \text{mg/L}$ and $\Delta C_2=600 \ \text{mg/L}$:
+\[
+    \Delta C_{lm}
+    =
+    \frac{1416.7-600}
+    {\ln\left(\frac{1416.7}{600}\right)}
+    =
+    \frac{816.7}{0.859}
+\]
+
+\[
+    \boxed{\Delta C_{lm} \approx 951 \ \text{mg/L}}
+\]
+
+\subsection{Urea Removal Rate, $\dot{m}_A$}
+
+The mass removal rate is:
+\[
+    \dot{m}_A = Q_b(C_{b,i}-C_{b,o})
+    = (1.0)(2000-600)
+    = 1400 \ \text{mg/min}
+\]
+
+\[
+    \boxed{\dot{m}_A = 1400 \ \text{mg/min}}
+\]
+
+\subsection{Required Membrane Surface Area, $A_m$}
+
+The required membrane area is:
+\[
+    A_m =
+    \frac{Q_b(C_{b,i}-C_{b,o})}
+    {K_o \Delta C_{lm}}
+\]
+
+Using $Q_b=1.0 \ \text{L/min}=1.667 \times 10^{-5} \ \text{m}^3/\text{s}$:
+\[
+    A_m
+    =
+    \frac{(1.667 \times 10^{-5})(1400)}
+    {(1.50 \times 10^{-5})(951)}
+    =
+    \frac{2.334 \times 10^{-2}}
+    {1.4265 \times 10^{-2}}
+\]
+
+\[
+    \boxed{A_m \approx 1.64 \ \text{m}^2}
+\]
+
+\subsection{Number of Hollow Fibers, $N_f$}
+
+The membrane area is related to hollow fiber geometry by:
+\[
+    A_m = N_f \pi d_f L
+\]
+
+Solving for $N_f$:
+\[
+    N_f = \frac{A_m}{\pi d_f L}
+\]
+
+Using $A_m=1.64 \ \text{m}^2$, $d_f=180 \ \mu\text{m}=1.80 \times 10^{-4} \ \text{m}$, and $L=0.20 \ \text{m}$:
+\[
+    N_f
+    =
+    \frac{1.64}
+    {\pi(1.80 \times 10^{-4})(0.20)}
+    =
+    \frac{1.64}{1.131 \times 10^{-4}}
+\]
+
+\[
+    \boxed{N_f \approx 1.45 \times 10^4 \ \text{fibers}}
+\]
+
+\subsection{Membrane Cost}
+
+The total membrane cost is:
+\[
+    \text{Cost}
+    =
+    A_m \left(\frac{\$}{\text{m}^2}\right)
+\]
+
+Using $A_m=1.64 \ \text{m}^2$ and a membrane cost of $15 \ \$/\text{m}^2$:
+\[
+    \text{Cost} = 1.64(15)
+\]
+
+\[
+    \boxed{\text{Cost} \approx \$24.60}
+\]
+
+\end{document}
