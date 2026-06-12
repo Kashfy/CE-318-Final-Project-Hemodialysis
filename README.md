@@ -15,10 +15,10 @@ This project presents a comprehensive analysis and preliminary design of a **hem
 
 ## Team Members
 
-- **Aymen Ahmad**
-- **[Kashfy Gazi](https://github.com/Kashfy)**
-- **Radi Imran**
-- **Gabriel Pin de Jesus**
+- **[Aymen Ahmad](https://www.linkedin.com/in/aymen-ahmad-cbe2027/)**
+- **[Kashfy Gazi](https://www.linkedin.com/in/kashfy-gazi-876048397/)** • [GitHub](https://github.com/Kashfy)
+- **[Radi Imran](https://www.linkedin.com/in/radiimran/)**
+- **[Gabriel Pin de Jesus](https://www.linkedin.com/in/gabrielpindejesus/)**
 
 ---
 
@@ -75,7 +75,7 @@ This configuration provides a large membrane surface area in a compact volume, m
 The design uses the following key equations:
 
 1. **Overall membrane mass transfer equation:**
-   - ṅₐ = Kₒ · Aₘ · ΔC_lm
+   - ṅₐ = Kₒ · Aₘ · ΔC_lm
 
 2. **Required membrane surface area:**
    - Aₘ = [Qb(Cb,i - Cb,o)] / (Kₒ · ΔC_lm)
@@ -167,7 +167,11 @@ The project references key literature including:
 
 **Project Repository:** [GitHub - CE-318-Final-Project-Hemodyalasis](https://github.com/Kashfy/CE-318-Final-Project-Hemodyalasis)
 
-**Team Member GitHub:** [@Kashfy](https://github.com/Kashfy)
+**Team LinkedIn Profiles:**
+- [Aymen Ahmad](https://www.linkedin.com/in/aymen-ahmad-cbe2027/)
+- [Kashfy Gazi](https://www.linkedin.com/in/kashfy-gazi-876048397/)
+- [Radi Imran](https://www.linkedin.com/in/radiimran/)
+- [Gabriel Pin de Jesus](https://www.linkedin.com/in/gabrielpindejesus/)
 
 ---
 
